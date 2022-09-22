@@ -1,0 +1,26 @@
+{
+  "name": "3-oquizz-sequelize",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shoufy/3-oquiz-sequelize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shoufy/3-oquiz-sequelize/issues"
+  },
+  "homepage": "https://github.com/Shoufy/3-oquiz-sequelize#readme",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.23.0"
+  }
+}
