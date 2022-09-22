@@ -8,6 +8,7 @@ class Level extends Model {
 Level.init({
     name: {
         type: DataTypes.STRING,
+        allowNull: false
     }
 }, {
     sequelize,

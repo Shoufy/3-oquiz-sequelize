@@ -8,6 +8,7 @@ class Answer extends Model {
 Answer.init({
     description: {
         type: DataTypes.STRING,
+        allowNull: false
     },
 }, {
     sequelize: sequelize,
