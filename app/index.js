@@ -1,9 +1,25 @@
 const dotenv = require('dotenv');
+//const sequelize = require('./dataBase');
+const express = require('express');
 dotenv.config();
-const sequelize = require('./dataBase');
+const router = require('./router');
 
-const { Tag, Question, User, Quiz, Answer, Level } = require('./models'); // par défaut il cherche le fichier index.js
+const app = express();
+const port = process.env.PORT || 3000
 
+app.use(express.static('public'));
+
+app.use(router); // ajout du router
+
+app.listen(port, () => {
+    console.log(`lecture de l app sur : http://localhost:${port}`)
+})
+
+
+
+
+
+//TEST EXOS
 //creation of new Level, SAME BELOW
 /* const newLevel = new Level({ name: "Invincible" });
 newLevel.save()
@@ -90,4 +106,26 @@ Question.findOne({ include: 'level'})
         .then((question) => {
             console.log(question);
         })
-*/
+
+User.findOne({ include : {
+    association: 'quizzes',
+    include: ['tags', 'questions']
+    }
+}) // Utilisation de l'alias qu'on a donné à la relation
+    .then((user) => {
+        //console.log(user);
+        console.log(user.quizzes); // toutes les questions de l'utilisateur
+    })
+    
+    User.findOne({ include : {
+        association: 'quizzes',
+        include: ['tags', {
+            association: 'questions',
+        include: ['good_answer']
+        }]
+    }}) // Utilisation de l'alias qu'on a donné à la relation
+        .then((user) => {
+            //console.log(user);
+            console.log(user.quizzes[0].questions[0].good_answer.description); // toutes les questions de l'utilisateur
+        })
+  */
