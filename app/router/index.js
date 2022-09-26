@@ -1,5 +1,7 @@
+const mainController = require('../controllers/mainController');
+
 const router = require('express').Router();
 
-router.get('/', (req, res) => res.send('hello world'));
+router.get('/', mainController.indexAction);
 
 module.exports = router;
