@@ -1,6 +1,8 @@
 const mainController = {
     indexAction: (req, res) => {
-        res.sendFile(__dirname + '../../integration/index.html');
+        res.sendFile('/public/index.html', {
+            root: __dirname + '../..'
+        });       
     }
 }
 
