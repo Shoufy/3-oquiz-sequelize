@@ -21,7 +21,10 @@ User.init({
     lastname: {
         type: DataTypes.STRING,
         allowNull: false
-    }
+    },
+    role: {
+        type: DataTypes.STRING,
+    },
 }, {
     sequelize,
     tableName: "user",

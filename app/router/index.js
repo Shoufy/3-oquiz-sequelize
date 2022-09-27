@@ -1,6 +1,7 @@
 const mainController = require('../controllers/mainController');
 const quizController = require('../controllers/quizController');
 const tagsController = require('../controllers/tagsController');
+const authController = require('../controllers/authController');
 
 const router = require('express').Router();
 
@@ -12,5 +13,10 @@ router.get('/quiz/:id', quizController.detailAction);
 router.get('/tags', tagsController.indexAction);
 // Page détail d'un tag
 router.get('/tag/:id', tagsController.detailAction);
+// Page login
+router.get('/login', authController.loginPage);
+// Soumission d'un login
+router.post('/login', authController.loginAction);
+
 
 module.exports = router;
