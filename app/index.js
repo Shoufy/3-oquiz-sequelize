@@ -1,6 +1,7 @@
 const dotenv = require('dotenv');
 //const sequelize = require('./dataBase');
 const express = require('express');
+const session = require('express-session');
 dotenv.config();
 const router = require('./router');
 
@@ -14,6 +15,20 @@ app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: true }))
+
+app.use(session({
+    secret: 'monsupermotdepasse',
+    resave: true,
+    saveUninitialized: true
+}))
+
+app.use((req, res, next) => {
+    res.locals.userConnected = req.session.userConnected || null;
+    if (res.locals.userConnected) {
+        delete res.locals.userConnected.password;
+    }
+    next();
+})
 
 app.use(router); // ajout du router
 
