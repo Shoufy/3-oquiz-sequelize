@@ -13,6 +13,9 @@ const mainController = {
             next(error);
         });
         //peut aussi s'écrire .catch(next);
+    },
+    profilPage: (req, res, next) => {
+        res.render('profil');
     }
 }
 

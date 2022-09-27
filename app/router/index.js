@@ -17,6 +17,7 @@ router.get('/tag/:id', tagsController.detailAction);
 router.get('/login', authController.loginPage);
 // Soumission d'un login
 router.post('/login', authController.loginAction);
-
+// Page profil
+router.get('/profil', mainController.profilPage);
 
 module.exports = router;
