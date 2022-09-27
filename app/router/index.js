@@ -1,9 +1,11 @@
+const router = require('express').Router();
+
 const mainController = require('../controllers/mainController');
 const quizController = require('../controllers/quizController');
 const tagsController = require('../controllers/tagsController');
 const authController = require('../controllers/authController');
-
-const router = require('express').Router();
+const userMiddleware = require('../middlewares/userMiddleware');
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
 // Page d'accueil
 router.get('/', mainController.indexAction);
@@ -18,6 +20,8 @@ router.get('/login', authController.loginPage);
 // Soumission d'un login
 router.post('/login', authController.loginAction);
 // Page profil
-router.get('/profil', mainController.profilPage);
+router.get('/profil', userMiddleware, mainController.profilPage);
+// Page admin
+router.get('/admin', adminMiddleware, mainController.adminPage);
 
 module.exports = router;

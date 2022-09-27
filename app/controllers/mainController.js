@@ -16,6 +16,9 @@ const mainController = {
     },
     profilPage: (req, res, next) => {
         res.render('profil');
+    },
+    adminPage: (req, res, next) => {
+        res.render('admin');
     }
 }
 
