@@ -1,6 +1,6 @@
 const mainController = require('../controllers/mainController');
 const quizController = require('../controllers/quizController');
-const tagsController = require('../controllers/tagController');
+const tagsController = require('../controllers/tagsController');
 
 const router = require('express').Router();
 
