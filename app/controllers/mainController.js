@@ -19,7 +19,10 @@ const mainController = {
     },
     adminPage: (req, res, next) => {
         res.render('admin');
-    }
+    },
+    signupPage: (req, res, next) => {
+        res.render('signup');
+    },
 }
 
 module.exports = mainController;

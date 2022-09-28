@@ -23,5 +23,9 @@ router.post('/login', authController.loginAction);
 router.get('/profil', userMiddleware, mainController.profilPage);
 // Page admin
 router.get('/admin', adminMiddleware, mainController.adminPage);
+// Page inscription 
+router.get('/signup', mainController.signupPage);
+// Soumission page d'inscription
+router.post('/signup', authController.signupAction);
 
 module.exports = router;

@@ -5,8 +5,10 @@
             <p class="lead">Inscrivez vous pour profiter des quizz !</p>
         </div>
 
-        <form action="/signup" method="POST" class="form-signin">
-
+        <form action="/signup" method="POST" class="form-signin" novalidate>
+            <% if (locals.error) { %> 
+                <p class="error"> <%= locals.error %> </p>
+            <% } %> 
             <div class="form-label-group">
                 <input type="lastname" class="form-control" id="lastname" name="lastname"
                     aria-describedby="lastnameHelp" placeholder="Votre nom">
