@@ -27,5 +27,7 @@ router.get('/admin', adminMiddleware, mainController.adminPage);
 router.get('/signup', mainController.signupPage);
 // Soumission page d'inscription
 router.post('/signup', authController.signupAction);
+// Page deconnexion
+router.get('/signout', authController.signoutAction);
 
 module.exports = router;

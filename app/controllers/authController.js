@@ -104,6 +104,11 @@ const authController = {
             });
         }
     },
+
+    signoutAction: (req, res) => {
+        req.session.userConnected = null;
+        res.redirect('/');
+    }
 }
 
 module.exports = authController;
